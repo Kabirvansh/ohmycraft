@@ -17,20 +17,35 @@ export default function Hero() {
         </button>
       </div> */}
 
+     <div className="absolute top-50 left-4 sm:left-6 md:left-8 lg:left-16 w-[90%] sm:w-[80%] md:w-[60%] lg:w-[50%]">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-brown-dark leading-tight">
+          Artistry from the<br />valley of Kashmir
+        </h2>
+        <p className="mt-1 text-lg md:text-xl text-brown-dark leading-snug">
+          Handcrafted wonders woven with tradition and love
+        </p>
+        <div className="flex justify-start mt-8 ml-20">
+          <button className="px-10 py-4 bg-[#3e1f00] text-white rounded-[15px] shadow-lg hover:shadow-xl transition">
+            Shop Collection
+          </button>
+        </div>
+      </div>
+
+
       {/* Image */}
       <div className="flex-1 flex justify-center lg:justify-end overflow-visible">
-        {/* Scale image down slightly for balanced framing */}
-        <div className="relative w-[120%] sm:w-[115%] md:w-[110%] lg:w-[105%] h-[250px] sm:h-[350px] md:h-[450px] lg:h-[550px] 
-                        translate-x-[8%] sm:translate-x-[6%] md:translate-x-[4%] lg:translate-x-[2%] overflow-visible">
+        {/* Use object-contain to avoid cropping, and adjust container size */}
+        <div className="relative w-full sm:w-11/12 md:w-3/4 lg:w-2/3 aspect-[16/9] overflow-visible filter drop-shadow-[0_4px_100px_rgba(0,0,0,0.95)]">
           <Image
             src="/images/hero.png"
             alt="Kashmiri handicrafts"
             fill
-            className="object-cover object-center shadow-hero"
+            className="object-contain shadow-hero"
             priority
           />
         </div>
       </div>
+      
     </section>
   );
 }

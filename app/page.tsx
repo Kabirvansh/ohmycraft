@@ -2,15 +2,16 @@
 import Header from "@/components/Header";
 import Hero     from "@/components/Hero";
 import CategoryCard from "@/components/CategoryCard";
+import Footer from "@/components/Footer";
 
 
 export default function HomePage() {
   // For now, hardcode your featured categories
   const featured = [
-    { id: 1, title: "Pashmina Shawls", img: "/images/pashmina.jpg" },
-    { id: 2, title: "Paper Maché", img: "/images/paper-mache.jpg" },
-    { id: 3, title: "Dry Fruits", img: "/images/dry-fruits.jpg" },
-    { id: 4, title: "Kashmiri Wazwaan", img: "/images/wazwan.jpg" },
+    { id: 1, title: "Shawls & Stoles", img: "/images/pashmina.png" },
+    { id: 2, title: "Paper Maché", img: "/images/paper-mache.png" },
+    { id: 3, title: "Dry Fruits", img: "/images/dry-fruits.png" },
+    { id: 4, title: "Kashmiri Wazwaan", img: "/images/wazwan.png" },
   ];
 
   return (
@@ -27,6 +28,7 @@ export default function HomePage() {
           </div>
         </section>
       </main>
+      <Footer />
     </>
   );
 }

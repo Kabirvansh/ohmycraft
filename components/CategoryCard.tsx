@@ -5,13 +5,14 @@ type Props = { title: string; imgSrc: string };
 
 export default function CategoryCard({ title, imgSrc }: Props) {
   return (
-    <div className="bg-beige rounded-lg overflow-hidden shadow-card hover:shadow-cardHover transition-shadow">
-      <div className="relative w-full h-48">
+    <div className="bg-beige rounded-b-lg overflow-hidden shadow-card hover:shadow-cardHover transition-shadow">
+      {/* Frame */}
+      <div className="relative w-full h-64 bg-[#3e1f00] rounded-lg overflow-hidden">
         <Image
           src={imgSrc}
           alt={title}
           fill
-          style={{ objectFit: "cover" }}
+          className="object-contain"
         />
       </div>
       <div className="p-4 text-center">
