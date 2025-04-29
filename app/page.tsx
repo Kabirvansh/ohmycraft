@@ -17,7 +17,7 @@ export default function HomePage() {
   return (
     <>
       <Header />
-      <main className="bg-[#dac095] min-h-screen px-4 md:px-8 lg:px-16">
+      <main className="container mx-auto bg-[#dac095] min-h-screen px-4 sm:px-6 lg:px-8">
         <Hero />
         <section className="mt-16">
           <h2 className="text-3xl font-semibold text-center mb-8">Featured Categories</h2>

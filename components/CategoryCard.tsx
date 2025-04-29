@@ -12,7 +12,7 @@ export default function CategoryCard({ title, imgSrc }: Props) {
           src={imgSrc}
           alt={title}
           fill
-          className="object-contain"
+          className="object-cover"
         />
       </div>
       <div className="p-4 text-center">

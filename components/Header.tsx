@@ -4,11 +4,11 @@ import { ShoppingCart, User } from "lucide-react";
 
 export default function Header() {
   return (
-    <header className="bg-[#dac095] flex items-center justify-between py-4">
-      <h1 className="text-4xl font-bold pl-6 underline" style={{ fontFamily: "'Arima Madurai'", color: "#3e1f00" }}>
+    <header className="bg-[#dac095] flex items-center justify-between py-2 sm:py-4 px-4 sm:px-6 lg:px-16">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold underline" style={{ fontFamily: "'Arima Madurai'", color: "#3e1f00" }}>
         oh'mycraft
       </h1>
-      <div className="flex items-center space-x-6 pr-6 text-lg" style={{ fontFamily: "'Arima Madurai'", color: "#3e1f00"}}>
+      <div className="flex items-center space-x-4 sm:space-x-6 pr-4 sm:pr-6 text-base sm:text-lg" style={{ fontFamily: "'Arima Madurai'", color: "#3e1f00"}}>
         <nav className="space-x-6">
           <Link href="/">Home</Link>
           <Link href="/categories">Categories</Link>
