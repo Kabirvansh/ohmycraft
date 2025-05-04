@@ -16,6 +16,7 @@ export default function DryFruitsPage({ onBack }: { onBack: () => void }) {
     }
 
     fetchDryFruits();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
   return (

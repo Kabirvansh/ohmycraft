@@ -1,17 +1,20 @@
 // pages/page.tsx
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import CategoryCard from "@/components/CategoryCard";
 import Footer from "@/components/Footer";
 import ShawlsPage from "@/components/ShawlsPage";
-// import PaperMachePage from "@/components/PaperMachePage";
+import PaperMachePage from "@/components/PaperMachePage";
 import DryFruitsPage from "@/components/DryFruitsPage";
-// import WazwaanPage from "@/components/WazwaanPage";
+import WazwaanPage from "@/components/WazwaanPage";
 
 export default function HomePage() {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [activeCategory]);
 
   const featured = [
     { id: 1, title: "Shawls & Stoles", img: "/images/pashmina.png" },
@@ -22,9 +25,9 @@ export default function HomePage() {
 
   let CategoryComponent = null;
   if (activeCategory === "Shawls & Stoles") CategoryComponent = <ShawlsPage onBack={() => setActiveCategory(null)} />;
-  // else if (activeCategory === "Paper Maché") CategoryComponent = <PaperMachePage onBack={() => setActiveCategory(null)} />;
+  else if (activeCategory === "Paper Maché") CategoryComponent = <PaperMachePage onBack={() => setActiveCategory(null)} />;
   else if (activeCategory === "Dry Fruits") CategoryComponent = <DryFruitsPage onBack={() => setActiveCategory(null)} />;
-  // else if (activeCategory === "Kashmiri Wazwaan") CategoryComponent = <WazwaanPage onBack={() => setActiveCategory(null)} />;
+  else if (activeCategory === "Kashmiri Wazwaan") CategoryComponent = <WazwaanPage onBack={() => setActiveCategory(null)} />;
 
   return (
     <>
