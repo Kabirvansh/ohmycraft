@@ -31,7 +31,7 @@ export default function HomePage() {
 
   return (
     <>
-      <Header />
+      <Header setActiveCategory={setActiveCategory} />
       {CategoryComponent ? (
         CategoryComponent
       ) : (

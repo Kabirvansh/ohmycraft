@@ -10,10 +10,16 @@ type Props = {
 
 export default function ProductCard({ title, price, description, imageUrl }: Props) {
   return (
-    <div className="bg-white rounded-lg shadow-card p-4 space-y-2">
+    <div className="bg-[#deba7f] rounded-lg shadow-card hover:shadow-cardHover transform transition duration-300 hover:scale-115 p-4 space-y-2 overflow-hidden">
       {imageUrl && (
         <div className="relative w-full h-48">
-          <Image src={imageUrl} alt={title} fill className="object-cover rounded" />
+          <Image
+            src={imageUrl}
+            alt={title}
+            fill
+            className="object-cover rounded"
+            unoptimized
+            />
         </div>
       )}
       <h3 className="text-xl font-semibold">{title}</h3>
