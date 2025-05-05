@@ -4,17 +4,21 @@ import { useEffect, useState } from "react";
 import { db } from "@/lib/firebase";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import ProductCard from "./ProductCard";
+import { Product } from "@/types/Product";
 
 export default function WazwaanPage({ onBack }: { onBack: () => void }) {
-  const [products, setProducts] = useState<any[]>([]);
+  const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
     async function fetchProducts() {
       const q = query(collection(db, "products"), where("category", "==", "Wazwaan"));
       const snapshot = await getDocs(q);
-      setProducts(snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
+      const productsData: Product[] = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      })) as Product[];
+      setProducts(productsData);
     }
-
     fetchProducts();
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
