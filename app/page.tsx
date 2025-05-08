@@ -32,32 +32,34 @@ export default function HomePage() {
   return (
     <>
       <Header setActiveCategory={setActiveCategory} />
-      {CategoryComponent ? (
-        CategoryComponent
-      ) : (
-        <>
-          <div className="bg-beige w-full">
-            <Hero />
-          </div>
-          <main className="bg-[#dac095] min-h-screen container mx-auto px-4 sm:px-6 lg:px-8">
-            <section className="mt-16">
-              <h2 className="text-3xl font-semibold text-center mb-8">Featured Categories</h2>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4">
-                {featured.map((cat) => (
-                  <div
-                    key={cat.id}
-                    onClick={() => setActiveCategory(cat.title)}
-                    className="cursor-pointer"
-                  >
-                    <CategoryCard title={cat.title} imgSrc={cat.img} />
-                  </div>
-                ))}
-              </div>
-            </section>
-          </main>
-        </>
-      )}
-      <Footer />
+      <div className="pt-[100px]">
+        {CategoryComponent ? (
+          CategoryComponent
+        ) : (
+          <>
+            <div className="bg-beige w-full">
+              <Hero />
+            </div>
+            <main className="bg-[#dac095] min-h-screen container mx-auto px-4 sm:px-6 lg:px-8">
+              <section className="mt-16">
+                <h2 className="text-3xl font-semibold text-center mb-8">Featured Categories</h2>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4">
+                  {featured.map((cat) => (
+                    <div
+                      key={cat.id}
+                      onClick={() => setActiveCategory(cat.title)}
+                      className="cursor-pointer"
+                    >
+                      <CategoryCard title={cat.title} imgSrc={cat.img} />
+                    </div>
+                  ))}
+                </div>
+              </section>
+            </main>
+          </>
+        )}
+        <Footer />
+      </div>
     </>
   );
 }

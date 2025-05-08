@@ -12,7 +12,7 @@ export default function Header({ setActiveCategory }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="bg-[#dac095] py-2 sm:py-4 px-4 sm:px-6 lg:px-16 relative h-[80px] sm:h-[100px]">
+    <header className="fixed top-0 left-0 w-full z-50 bg-[#dac095] py-2 sm:py-4 px-4 sm:px-6 lg:px-16 h-[100px] shadow-md">
       {/* Left Side: Mobile Controls & Desktop Nav */}
       <div className="absolute left-4 top-1/2 -translate-y-1/2 flex items-center space-x-4 sm:space-x-6 text-[#3e1f00]">
         {/* Mobile Controls */}
